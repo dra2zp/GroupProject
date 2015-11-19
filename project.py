@@ -8,7 +8,7 @@ from random import randint
 #########
 
 #Initialize World
-name = "Name Goes Here"
+name = "Chase Game"
 width = 500
 height = 500
 rw.newDisplay(width, height, name)
@@ -16,7 +16,8 @@ rw.newDisplay(width, height, name)
 ################################################################
 
 # Display the state by drawing a cat at that x coordinate
-myimage = dw.loadImage("Image Name Goes Here")
+myimage = dw.loadImage("dog.bmp")
+catimage = dw.loadImage("cat.bmp")
 
 # state -> image (IO)
 # draw the cat halfway up the screen (height/2) and at the x
@@ -25,6 +26,7 @@ myimage = dw.loadImage("Image Name Goes Here")
 def updateDisplay(state):
     dw.fill(dw.black)
     dw.draw(myimage, (state[0], state[1]))
+    dw.draw(catimage, (200, 200))
 
 
 ################################################################
@@ -75,7 +77,7 @@ def handleEvent(state, event):
 # World state will be single x coordinate at left edge of world
 
 # The cat starts at the upper left corner, moving right and down
-initState = (randint(150,350), randint(150,350), randint(1,5), randint(1,5))
+initState = (0, 0, 0, 0)
 
 # Run the simulation no faster than 60 frames per second
 frameRate = 60
