@@ -1,8 +1,8 @@
 import pygame
 from random import randint
 
-dog_path = pygame.image.load("dog.jpg")
-cat_path = pygame.image.load("cat.jpg")
+dog_path = pygame.image.load("dog.bmp")
+cat_path = pygame.image.load("cat.bmp")
 
 class DogImage(object):
     def __init__(self, image):
