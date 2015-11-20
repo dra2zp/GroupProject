@@ -13,7 +13,7 @@ class DogImage(object):
 
     def handle_keys(self):
         key = pygame.key.get_pressed()
-        dist = 0.5
+        dist = 2
         if key[pygame.K_DOWN]:
             self.b += dist
 
@@ -86,7 +86,7 @@ while running:
         if (event.type == pygame.QUIT):
             pygame.quit()
             running = False
-        if ((abs(dogImage.a) >= abs(catImage.c - 25)) and (abs(dogImage.b) >= abs(catImage.d - 25))):
+        if ((abs(dogImage.a) >= abs(catImage.c -100)) and (abs(dogImage.b) >= abs(catImage.d - 100))):
             pygame.quit()
             running = False
         #CatImage.checkCollision(dogImage.image_a, catImage.image_c)
