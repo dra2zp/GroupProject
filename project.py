@@ -16,7 +16,7 @@ rw.newDisplay(width, height, name)
 ################################################################
 
 # Display the state by drawing a cat at that x coordinate
-myimage = dw.loadImage("dog.bmp")
+dogimage = dw.loadImage("dog.bmp")
 catimage = dw.loadImage("cat.bmp")
 
 # state -> image (IO)
@@ -25,7 +25,7 @@ catimage = dw.loadImage("cat.bmp")
 #
 def updateDisplay(state):
     dw.fill(dw.black)
-    dw.draw(myimage, (state[0], state[1]))
+    dw.draw(dogimage, (state[0], state[1]))
     dw.draw(catimage, (200, 200))
 
 
@@ -67,8 +67,8 @@ def endState(state):
 #
 def handleEvent(state, event):
 #    print("Handling event: " + str(event))
-    if (event.type == pg.MOUSEBUTTONDOWN):
-        return((state[0],state[1],randint(-5,5),randint(-5,5)))
+    if (event.type == pg.KEYDOWN):
+        return((state[0],state[1],0,0))
     else:
         return(state)
 
