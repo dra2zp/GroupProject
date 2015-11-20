@@ -64,7 +64,7 @@ class CatImage(object):
     #    if collision == True:
     #        pygame.quit()
 
-pygame.init()#rdy
+pygame.init()
 screen = pygame.display.set_mode((500, 500))
 
 #dog_rect = dog_path.get_rect()
@@ -86,9 +86,7 @@ while running:
         if (event.type == pygame.QUIT):
             pygame.quit()
             running = False
-        if ((abs(dogImage.a) >= abs(catImage.c - 25)) and (abs(dogImage.b) >= abs(catImage.d - 25))):
-            pygame.quit()
-            running = False
+
         #CatImage.checkCollision(dogImage.image_a, catImage.image_c)
         #elif (CatImage.checkCollision(dogImage.rect, catImage.rect)):
         #    pygame.quit()
