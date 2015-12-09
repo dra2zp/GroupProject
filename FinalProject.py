@@ -13,7 +13,7 @@ class DogImage(object):
 
     def handle_keys(self):
         key = pygame.key.get_pressed()
-        dist = 2
+        dist = 1
         if key[pygame.K_DOWN]:
             self.b += dist
 
@@ -59,16 +59,8 @@ class CatImage(object):
     def draw_cat(self, surface):
         surface.blit(self.image, (self.c, self.d))
 
-    #def checkCollision(sprite1, sprite2):
-    #    collision = pygame.sprite.spritecollide(sprite1, sprite2, False)
-    #    if collision == True:
-    #        pygame.quit()
-
-pygame.init()#rdy
+pygame.init()
 screen = pygame.display.set_mode((500, 500))
-
-#dog_rect = dog_path.get_rect()
-#cat_rect = cat_path.get_rect()
 
 dogImage = DogImage(dog_path)
 catImage = CatImage(cat_path)
@@ -77,30 +69,12 @@ clock = pygame.time.Clock()
 running = True
 while running:
     for event in pygame.event.get():
-        #CatImage.draw_cat(cat_path, (self.c, self.d))
-        #DogImage.draw_dog(dog_path, (self.a, self.b))
-        #if (event.type == None):
-            #running = True
-        #elif (DogImage(self.rect).colliderect(CatImage(self.rect))):
-            #running = False
         if (event.type == pygame.QUIT):
             pygame.quit()
             running = False
         if ((abs(dogImage.a) >= abs(catImage.c -100)) and (abs(dogImage.b) >= abs(catImage.d - 100))):
             pygame.quit()
             running = False
-        #CatImage.checkCollision(dogImage.image_a, catImage.image_c)
-        #elif (CatImage.checkCollision(dogImage.rect, catImage.rect)):
-        #    pygame.quit()
-        #    running = False
-
-
-        #elif (dogImage.collide(catImage)):
-        #    running = False
-        #elif (abs(self.a - self.c) < 12.5):
-        #    running = False
-        #elif (abs(self.b - self.d) < 12.5):
-        #    running = False
 
     dogImage.handle_keys()
     catImage.handle_random()
